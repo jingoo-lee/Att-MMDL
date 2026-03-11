@@ -19,7 +19,8 @@ The Att-MMDL framework is a surrogate model that replaces expensive Monte Carlo 
 
 ## Framework
 
-<img width="1107" height="759" alt="image" src="https://github.com/user-attachments/assets/2926e0f5-8c9d-4dad-85b0-edb2b145ad01" />
+<img width="1678" height="1128" alt="image" src="https://github.com/user-attachments/assets/8b0932b2-532a-4fad-9c1a-c56bde397063" />
+
 
 
 
@@ -32,7 +33,8 @@ The framework consists of three sequential steps:
 
 ## Architecture
 
-<img width="1501" height="573" alt="image" src="https://github.com/user-attachments/assets/22b11258-edd8-44c5-87af-f054ff777653" />
+<img width="2244" height="933" alt="image" src="https://github.com/user-attachments/assets/6e85b9d8-6b44-4659-a383-ba9018fc9667" />
+
 
 
 
