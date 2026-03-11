@@ -19,7 +19,8 @@ The Att-MMDL framework is a surrogate model that replaces expensive Monte Carlo 
 
 ## Framework
 
-<!-- Insert Fig. 1 (Overview of the proposed framework) here -->
+<img width="1107" height="759" alt="image" src="https://github.com/user-attachments/assets/98dae117-bd6a-4f45-ad35-11bfdf1b55d9" />
+
 
 The framework consists of three sequential steps:
 1. **Data generation** via MC ABAQUS (Monte Carlo + FE simulation)
@@ -30,7 +31,8 @@ The framework consists of three sequential steps:
 
 ## Architecture
 
-<!-- Insert Fig. 6 (Proposed network architecture) here -->
+<img width="1517" height="583" alt="image" src="https://github.com/user-attachments/assets/df305190-6a95-481d-827d-deb618f40370" />
+
 
 | Component | Description |
 |---|---|
@@ -43,7 +45,8 @@ The framework consists of three sequential steps:
 
 ## Target Structure
 
-<!-- Insert Fig. 3 or Fig. 4 (FEM of the auxiliary building) here -->
+<img width="933" height="773" alt="image" src="https://github.com/user-attachments/assets/88e6c682-3f35-47ff-9656-26b44af3f31d" />
+
 
 The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 - 17,233 shell elements (S4R + S3R)
@@ -55,7 +58,9 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Key Results
 
-<!-- Insert Fig. 9–10 (Scenario 1) and Fig. 13–14 (Scenario 2) here -->
+<img width="1666" height="443" alt="image" src="https://github.com/user-attachments/assets/79eb3953-e459-4762-a8a2-08ba72b82de0" />
+<img width="1640" height="443" alt="image" src="https://github.com/user-attachments/assets/e21b8c66-974c-4bf6-8d73-1f12301e77c0" />
+
 
 | Model | Scenario 1 mMAPE | Scenario 2 mMAPE | R² |
 |---|---|---|---|
@@ -70,7 +75,8 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Probabilistic Risk Quantification
 
-<!-- Insert Fig. 17 or Fig. 18 (Deterministic vs. probabilistic prediction) here -->
+<img width="1002" height="777" alt="image" src="https://github.com/user-attachments/assets/0f8820bb-a20c-44a8-8fe6-8dbaaa24ef76" />
+
 
 The framework computes temporal exceedance probability in real time:
 
@@ -84,13 +90,24 @@ This transforms binary risk classification into **continuous risk quantification
 
 ```
 Att-MMDL/
+├── Baselinemodel_LSTM/
+│   ├── LSTM_based_model.m        # Model architecture definition
+│   └── net.mat                   # Pretrained weights
+│
+├── Baselinemodel_Res1DCNN/
+│   ├── experimental_layer_v3.m   # Model architecture definition (custom layer)
+│   └── net.mat                   # Pretrained weights
+│
+├── Proposedmodel_RESS/
+│   ├── createSeismicAttentionModel_vFinal2.m   # Model architecture definition
+│   └── net.mat                                 # Pretrained weights
+│
 ├── Model Train and Models/
-│   ├── train_proposed.m          # Training script — proposed model
-│   ├── train_baseline1.m         # Training script — baseline 1
-│   ├── train_baseline2.m         # Training script — baseline 2
-│   ├── proposed_model.mat        # Pretrained weights — proposed
-│   ├── baseline1_model.mat       # Pretrained weights — baseline 1
-│   └── baseline2_model.mat       # Pretrained weights — baseline 2
+│   ├── AEQ_DLMODEL_Trainnet.m    # Main training script
+│   ├── Baselinemodel_LSTM.m      # Baseline 2 model definition (for training)
+│   ├── Baselinemodel_ResCNN.m    # Baseline 1 model definition (for training)
+│   └── Proposedmodel_RESS.m      # Proposed model definition (for training)
+│
 └── README.md
 ```
 
@@ -100,16 +117,27 @@ Att-MMDL/
 
 ## How to Load Pretrained Models
 
-> ⚠️ **Important**: Each `.mat` file must be opened using the `.m` script located in the **same directory**. **Do not rename the `.m` files** — the scripts rely on exact filenames to locate and load the model weights correctly.
+> ⚠️ **Important**: Each `net.mat` file must be loaded using the `.m` script located in the **same folder**. **Do not rename the `.m` files** — the model weights stored in `net.mat` depend on the custom layer and architecture definitions in the accompanying `.m` file. Renaming or moving the `.m` file will cause MATLAB to fail when reconstructing the network from the `.mat` file.
 
+### Proposed Model (Att-MMDL)
 ```matlab
-% Step 1. Navigate to the directory containing both .mat and .m files
-cd('Model Train and Models')
+% Step 1. Add the folder to MATLAB path (the .m file must be present)
+addpath('Proposedmodel_RESS')
 
-% Step 2. Run the loading script (do NOT rename this file)
-run('load_proposed.m')   % for proposed model
-run('load_baseline1.m')  % for baseline 1
-run('load_baseline2.m')  % for baseline 2
+% Step 2. Load pretrained weights
+load('Proposedmodel_RESS/net.mat')   % loads variable 'net' into workspace
+```
+
+### Baseline 1 (Res-1D CNN)
+```matlab
+addpath('Baselinemodel_Res1DCNN')
+load('Baselinemodel_Res1DCNN/net.mat')
+```
+
+### Baseline 2 (LSTM)
+```matlab
+addpath('Baselinemodel_LSTM')
+load('Baselinemodel_LSTM/net.mat')
 ```
 
 ---
@@ -129,15 +157,14 @@ run('load_baseline2.m')  % for baseline 2
 
 ```bibtex
 @article{lee2026attmmdl,
-  title   = {Predicting Seismic Floor Response for Nuclear Power Plant Structures 
-             with Time-series Uncertainty Propagation Using Attention-enhanced 
+  title   = {Predicting Seismic Floor Response for Nuclear Power Plant Structures
+             with Time-series Uncertainty Propagation Using Attention-enhanced
              Multimodal Deep Learning},
   author  = {Lee, Jingoo and Lee, Seungjun and Lee, Young-Joo and Lee, Jaebeom},
   journal = {Reliability Engineering \& System Safety},
-  volume  = {},
   pages   = {112582},
   year    = {2026},
-  note    = {In Press},
+  note    = {In Press, Available online 10 March 2026},
   doi     = {10.1016/j.ress.2026.112582}
 }
 ```
