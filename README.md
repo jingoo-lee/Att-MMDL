@@ -19,7 +19,8 @@ The Att-MMDL framework is a surrogate model that replaces expensive Monte Carlo 
 
 ## Framework
 
-<img width="1107" height="759" alt="image" src="https://github.com/user-attachments/assets/98dae117-bd6a-4f45-ad35-11bfdf1b55d9" />
+<img width="1107" height="759" alt="image" src="https://github.com/user-attachments/assets/2926e0f5-8c9d-4dad-85b0-edb2b145ad01" />
+
 
 
 The framework consists of three sequential steps:
@@ -31,7 +32,8 @@ The framework consists of three sequential steps:
 
 ## Architecture
 
-<img width="1517" height="583" alt="image" src="https://github.com/user-attachments/assets/df305190-6a95-481d-827d-deb618f40370" />
+<img width="1501" height="573" alt="image" src="https://github.com/user-attachments/assets/22b11258-edd8-44c5-87af-f054ff777653" />
+
 
 
 | Component | Description |
@@ -45,7 +47,8 @@ The framework consists of three sequential steps:
 
 ## Target Structure
 
-<img width="933" height="773" alt="image" src="https://github.com/user-attachments/assets/88e6c682-3f35-47ff-9656-26b44af3f31d" />
+<img width="933" height="773" alt="image" src="https://github.com/user-attachments/assets/ccabd74a-f6d2-4796-bec7-e61e5d625491" />
+
 
 
 The model targets a **6-story NPP auxiliary building** (KAERI reference model):
@@ -58,8 +61,8 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Key Results
 
-<img width="1666" height="443" alt="image" src="https://github.com/user-attachments/assets/79eb3953-e459-4762-a8a2-08ba72b82de0" />
-<img width="1640" height="443" alt="image" src="https://github.com/user-attachments/assets/e21b8c66-974c-4bf6-8d73-1f12301e77c0" />
+<img width="1667" height="886" alt="image" src="https://github.com/user-attachments/assets/871ba729-8da9-4ec6-8dba-28e409705ca9" />
+
 
 
 | Model | Scenario 1 mMAPE | Scenario 2 mMAPE | R² |
@@ -75,7 +78,8 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Probabilistic Risk Quantification
 
-<img width="1002" height="777" alt="image" src="https://github.com/user-attachments/assets/0f8820bb-a20c-44a8-8fe6-8dbaaa24ef76" />
+<img width="1002" height="777" alt="image" src="https://github.com/user-attachments/assets/6bc7dcf7-302e-4035-9054-6933045ea364" />
+
 
 
 The framework computes temporal exceedance probability in real time:
