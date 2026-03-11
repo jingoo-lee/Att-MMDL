@@ -79,7 +79,7 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 - Error reduction of **54%** and **67%** relative to baseline models 1 and 2, respectively
 - Inference time: **millisecond scale** (suitable for real-time post-earthquake assessment)
-
+- Above images shows only for scenario 1
 ---
 
 ## Probabilistic Risk Quantification
