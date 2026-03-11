@@ -47,7 +47,8 @@ The framework consists of three sequential steps:
 
 ## Target Structure
 
-<img width="933" height="773" alt="image" src="https://github.com/user-attachments/assets/ccabd74a-f6d2-4796-bec7-e61e5d625491" />
+<img width="934" height="773" alt="image" src="https://github.com/user-attachments/assets/0eebe955-194f-4763-a284-caf3d4f776f6" />
+
 
 
 
