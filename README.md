@@ -49,7 +49,8 @@ The framework consists of three sequential steps:
 
 ## Target Structure
 
-<img width="934" height="773" alt="image" src="https://github.com/user-attachments/assets/0eebe955-194f-4763-a284-caf3d4f776f6" />
+<img width="1577" height="1202" alt="image" src="https://github.com/user-attachments/assets/1392f423-227f-4790-9a56-2cdb925fd093" />
+
 
 
 
@@ -64,7 +65,9 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Key Results
 
-<img width="1667" height="886" alt="image" src="https://github.com/user-attachments/assets/871ba729-8da9-4ec6-8dba-28e409705ca9" />
+<img width="2399" height="638" alt="image" src="https://github.com/user-attachments/assets/849b10be-1db3-45b2-869b-169afb7f0540" />
+<img width="2420" height="722" alt="image" src="https://github.com/user-attachments/assets/b15fbd99-7a0b-4ab0-b47b-590bc721f536" />
+
 
 
 
@@ -81,7 +84,8 @@ The model targets a **6-story NPP auxiliary building** (KAERI reference model):
 
 ## Probabilistic Risk Quantification
 
-<img width="1002" height="777" alt="image" src="https://github.com/user-attachments/assets/6bc7dcf7-302e-4035-9054-6933045ea364" />
+<img width="1409" height="1159" alt="image" src="https://github.com/user-attachments/assets/1fbc5ce5-d9dc-43e3-8656-c6c0d9f3a2f2" />
+
 
 
 
